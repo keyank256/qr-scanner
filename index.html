@@ -6,53 +6,15 @@
 <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
 <script src="https://rawgit.com/sitepoint-editors/jsqrcode/master/src/qr_packed.js">
 </script>
-<script src="script.js"></script>
-<link rel="stylesheet" type="text/css" href="style.css">
-    <!--Load the AJAX API-->
-   <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
-    <script type="text/javascript">
-
-      // Load the Visualization API and the corechart package.
-      google.charts.load('current', {'packages':['corechart']});
-
-      // Set a callback to run when the Google Visualization API is loaded.
-      google.charts.setOnLoadCallback(drawChart);
-
-      // Callback that creates and populates a data table,
-      // instantiates the pie chart, passes in the data and
-      // draws it.
-      function drawChart() {
-
-        // Create the data table.
-        var data = new google.visualization.DataTable();
-        data.addColumn('string', 'Topping');
-        data.addColumn('number', 'Slices');
-        data.addRows([
-          ['Mushrooms', 3],
-          ['Onions', 1],
-          ['Olives', 1],
-          ['Zucchini', 1],
-          ['Pepperoni', 2]
-        ]);
-
-        // Set chart options
-        var options = {'title':'How Much Pizza I Ate Last Night',
-                       'width':400,
-                       'height':300};
-
-        // Instantiate and draw our chart, passing in some options.
-        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
-        chart.draw(data, options);
-      }
-    </script>
   </head>
 <body>
-    <div id="fb-root"></div>
+ <div id="fb-root"></div>
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v4.0"></script>
 <h2>Scan QR Code</h2>
 <input type="password" size=16 placeholder="Number" class=qrcode-text><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onchange="openQRCamera(this);" tabindex=-1></label> 
-<input type=button value="Go" disabled>
-  <div id="chart"></div><br><br>
+<input type=button value="Go" disabled><br>
+<div class="fb-page" data-href="https://www.facebook.com/cyberkeyan/" data-tabs="timeline" data-width="500" data-height="600" data-small-header="true" data-adapt-container-width="true" data-hide-cover="true" data-show-facepile="true"><blockquote cite="https://www.facebook.com/cyberkeyan/" class="fb-xfbml-parse-ignore"><a href="https://www.facebook.com/cyberkeyan/">CYBER Uganda</a></blockquote></div>
+    <br>
     <div id="twitter">
     <a class="twitter-timeline" data-width="500" data-height="600" data-theme="dark" data-link-color="#19CF86" href="https://twitter.com/KEYAN256?ref_src=twsrc%5Etfw">Tweets by KEYAN256</a> 
         <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
