@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Q-RASAMM</title>
+<link rel='stylesheet' href='style.css'>
+</head>
+<body>
+
+<h1 style='text-align:center;color:green;'>Quick-Response Airtime Sell And Mobile Money<br>(Q-RASAMM)</h>
+<br><br><a href="index.html>">Home</a>
+<h4>Buy Credit</h4>
+<div style='text-style:bold;'>Check to Enter Number:
+	<input type="checkbox" id = "check" onclick = "checker()" ></div><br><br>
+
+<div id ="form">
+Scan Number:
+<input type="file">
+
+</div><br>
+Enter Amount:<input type='text'>
+<br><br>
+<input type='button' value='Sell Airtime'><br><br>
+
+<h4>Card</h4>
+
+Enter Name:<input type='text' id='name'><br>
+Enter Number:<input type='text' id='number'><br><br>
+
+<input type='button' value='Generate Card' onclick='generatecard()'><br><br>
+<canvas id ="mycanvas" width ="1013" height="638" style ="border:1px solid #000000;"></canvas><br>
+
+<a id="download" download="card.jpg">
+<button type="button" onClick="download()">Download</button></a>
+
+<div id='code'>
+<img src='ken.PNG' id='coder'></div>
+
+<div style='text-align:center;margin-top:100px;'>
+<p>TRANSACTION IDs<p>
+
+<div id='display'style='color:green;'>
+<input type='button' value='Show Transactions'onclick='display()'>
+</div>
+
+<p>DIGITAL CLOCK</p>
+<div id='clock'style='color:green;'></div><bbr
+<br>
+<br>
+
+&copyKEYAN 
+</div>
+
+
+<script>
+
+const checker=()=>{
+let checkbox = document .getElementById ('check' );
+if (checkbox .checked == true )
+{
+	let conts = "Enter Number:<input type='text'>";
+	
+document.getElementById("form").innerHTML = conts;
+}else{
+	
+	let conts = "Scan Number:<input type='file'>";
+	
+document.getElementById("form").innerHTML = conts;
+}
+}
+
+
+const generatecard=()=>{
+	let name = document.getElementById('name').value;
+	let canvas = document.getElementById("mycanvas");
+	let stf = canvas.getContext('2d');
+	stf.fillStyle = "white";
+	stf.fillRect( 0 , 0, 1013 , 638 );
+	// Create gradient
+	let grd = stf.createLinearGradient(0,0,200,0);
+	grd.addColorStop( 1, "red" );
+	grd.addColorStop( 1, "white" );
+	// Fill with gradient
+	stf.fillStyle = grd;
+	stf.fillRect( 0 , 0, 1013 , 159 );
+	
+	// Create text header
+	stf.fillStyle = "black";
+	stf.textAlign = "center";
+	stf.font = "90px Comic Sans MS";
+	stf.fillText("Q-RASAMM" , 556, 127.6);
+	
+	stf.fillStyle = "red";
+	stf.textAlign = "center";
+	stf.font = "90px Comic Sans MS";
+	stf.fillText("Q-RASAMM" , 550, 127.6);
+	//draw line
+	stf.fillStyle = 'red';
+	stf.moveTo( 0, 159);
+	stf.lineTo( 1013 , 159);
+	stf.stroke();
+	
+	stf.textAlign = 'left';
+	stf.font ="60px Arial " ;
+	stf.fillText("Name:", 100 , 270 );
+	stf.fillStyle = 'black';
+	stf.fillText(name , 310 , 270);
+	
+	stf.fillStyle = "black";
+	stf.fillRect( 800 , 520, 160 , 60 );
+	
+	stf.fillStyle = "red";
+	stf.fillRect( 820, 540, 160 , 60);
+	
+	//draw code
+	let img = document.getElementById('coder');
+	
+	stf.drawImage(img, 420, 330);
+	
+	document.getElementById("name").value = "";
+	
+	
+	
+}
+
+const display=()=>{
+	let date = Date.now();
+	document.getElementById('display').innerHTML= 'TXN.'+ date;
+}
+display();
+setInterval(display,1)
+
+const clock=()=> {
+	let date =new Date();
+	let hour = date.getHours() +'';
+	let min =date.getMinutes()+'';
+	let sec =date.getSeconds()+'';
+	let day =date.getDay();
+	let weekday = ['SUN','MON','TUE','WED','THU','FRI','SAT'];
+	
+	if(hour.length<2){
+	 hour ='0'+ hour;
+	}
+	
+	if(min.length<2){
+	 min ='0'+ min;
+	}
+	
+	if(sec.length<2){
+	 sec ='0'+ sec;
+	}
+	
+	let clock = weekday[day] + ' ' + hour + ':' + min + ':' + sec+'<br>'+date.getMilliseconds();
+	
+	document.getElementById('clock').innerHTML = clock;
+}
+clock();
+setInterval(clock,1)
+
+const download=()=>{
+        let download = document.getElementById("download");
+        let image = document.getElementById("mycanvas").toDataURL("image/jpg")
+                    .replace("image/jpg", "image/octet-stream");
+        download.setAttribute("href", image);
+
+    }
+
+</script>
+</body>
+</html>
+    
+    
+    
+    
+    
+    
+    
